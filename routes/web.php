@@ -3,7 +3,8 @@ use App\Http\Controllers\HomeController;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\CategoryController;
 use App\Http\Controllers\SubcateoryController;
-
+use App\Http\Controllers\DisctrictController;
+use App\Http\Controllers\SubdisctrictController;
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -35,3 +36,15 @@ Route::post('/store/subcategory', [SubcateoryController::class, 'store'])->name(
 Route::get('/edit/subcategory/{id}', [SubcateoryController::class, 'edit'])->name('edit.subcategory');
 Route::post('/update/subcategory/{id}', [SubcateoryController::class, 'update'])->name('update.subcategory');
 Route::get('/delete/subcategory/{id}', [SubcateoryController::class, 'destroy'])->name('delete.subcategory');
+Route::get('/disctrict', [DisctrictController::class, 'index'])->name('district');
+Route::get('/add/disctrict', [DisctrictController::class, 'create'])->name('add.district');
+Route::post('/store/disctrict', [DisctrictController::class, 'store'])->name('store.district');
+Route::get('/edit/disctrict/{id}', [DisctrictController::class, 'edit'])->name('edit.district');
+Route::post('/update/disctrict/{id}', [DisctrictController::class, 'update'])->name('update.district');
+Route::get('/delete/disctrict/{id}', [DisctrictController::class, 'destroy'])->name('delete.district');
+Route::get('/subdistrict', [SubdisctrictController::class, 'index'])->name('subdistrict');
+Route::get('/add/subdistrict', [SubdisctrictController::class, 'create'])->name('add.subdistrict');
+Route::post('/store/subdistrict', [SubdisctrictController::class, 'store'])->name('store.subdistrict');
+Route::get('/edit/subdistrict/{id}', [SubdisctrictController::class, 'edit'])->name('edit.subdistrict');
+Route::post('/update/subdistrict/{id}', [SubdisctrictController::class, 'update'])->name('update.subdistrict');
+Route::get('/delete/subdistrict/{id}', [SubdisctrictController::class, 'destroy'])->name('delete.subdistrict');
