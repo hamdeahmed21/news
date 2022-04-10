@@ -33,11 +33,11 @@
         <div class="col-lg-12 grid-margin stretch-card">
             <div class="card">
                 <div class="card-body">
-                    <h4 class="card-title">Post Page </h4>
+                    <h4 class="card-title">Website Setting Links </h4>
 
 
                     <div class="template-demo">
-                        <a href="{{ route('create.post')  }}"><button type="button" class="btn btn-primary btn-fw" style="float: right;">Add Post</button></a>
+                        <a href="{{ route('add.website')  }}"><button type="button" class="btn btn-primary btn-fw" style="float: right;">Add Website Link</button></a>
                     </div>
 
 
@@ -46,28 +46,23 @@
                             <thead>
                             <tr>
                                 <th> # </th>
-                                <th> Post Title </th>
-                                <th> Category </th>
-                                <th> District </th>
-                                <th> Image </th>
-                                <th> Post Date </th>
+                                <th> Website Name </th>
+                                <th> Website Link </th>
                                 <th> Action </th>
 
                             </tr>
                             </thead>
                             <tbody>
                             @php($i = 1)
-                            @foreach($post as $row)
+                            @foreach($website as $row)
                                 <tr>
                                     <td> {{ $i++ }} </td>
-                                    <td> {{ Str::limit($row->title_en , 10) }} </td>
-                                    <td> {{ $row->category_en }} </td>
-                                    <td> {{ $row->district_en }} </td>
-                                    <td> <img src="{{$row->image }}" style="width: 50px; height: 50px;"> </td>
-                                    <td>{{ Carbon\Carbon::parse($row->post_date)->diffForHumans() }} </td>
+                                    <td> {{ $row->website_name }} </td>
+
+                                    <td>{{ $row->website_link }} </td>
                                     <td>
-                                        <a href="{{ route('edit.post',$row->id) }}" class="btn btn-info">Edit</a>
-                                        <a href="{{ route('delete.post',$row->id) }}" onclick="return confirm('Are you sure to delete')" class="btn btn-danger">Delete</a>
+                                        <a href="{{ route('edit.website',$row->id) }}" class="btn btn-info">Edit</a>
+                                        <a href="{{ route('delete.website',$row->id) }}" onclick="return confirm('Are you sure to delete')" class="btn btn-danger">Delete</a>
 
                                     </td>
                                 </tr>
@@ -75,7 +70,7 @@
 
                             </tbody>
                         </table>
-                        {{ $post->links('pagination-links') }}
+                        {{ $website->links('pagination-links') }}
                     </div>
                 </div>
             </div>

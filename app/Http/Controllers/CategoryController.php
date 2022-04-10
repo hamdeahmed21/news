@@ -64,7 +64,7 @@ class CategoryController extends Controller
      */
     public function edit($id)
     {
-        $category = category::find($id);
+        $category = DB::table('categories')->where('id',$id)->first();
         return view('Backend.Category.edit',compact('category'));
     }
 
@@ -97,9 +97,9 @@ class CategoryController extends Controller
      * @param  \App\Models\category  $category
      * @return \Illuminate\Http\Response
      */
-    public function delete(category $category,$id)
+    public function delete($id)
     {
-        $category = category::find($id)->delete();
+        DB::table('categories')->where('id',$id)->delete();
         $notification = array(
             'message' => 'Category Deleted Successfully',
             'alert-type' => 'success'
