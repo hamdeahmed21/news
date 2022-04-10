@@ -5,6 +5,8 @@ use App\Http\Controllers\CategoryController;
 use App\Http\Controllers\SubcateoryController;
 use App\Http\Controllers\DisctrictController;
 use App\Http\Controllers\SubdisctrictController;
+use App\Http\Controllers\PostsController;
+
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -48,3 +50,9 @@ Route::post('/store/subdistrict', [SubdisctrictController::class, 'store'])->nam
 Route::get('/edit/subdistrict/{id}', [SubdisctrictController::class, 'edit'])->name('edit.subdistrict');
 Route::post('/update/subdistrict/{id}', [SubdisctrictController::class, 'update'])->name('update.subdistrict');
 Route::get('/delete/subdistrict/{id}', [SubdisctrictController::class, 'destroy'])->name('delete.subdistrict');
+Route::get('/get/subcategory/{category_id}', [PostsController::class, 'GetSubCategory']);
+Route::get('/get/subdistrict/{district_id}', [PostsController::class, 'GetSubDistrict']);
+Route::get('/all/post', [PostsController::class, 'index'])->name('all.post');
+Route::get('/createpost', [PostsController::class, 'create'])->name('create.post');
+Route::post('/store/post', [PostsController::class, 'store'])->name('store.post');
+
