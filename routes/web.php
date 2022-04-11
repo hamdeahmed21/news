@@ -1,4 +1,6 @@
 <?php
+
+use App\Http\Controllers\GalleryController;
 use App\Http\Controllers\HomeController;
 use App\Http\Controllers\SocialsController;
 use Illuminate\Support\Facades\Route;
@@ -73,9 +75,21 @@ Route::get('/notice/setting', [SocialsController::class, 'noticesetting'])->name
 Route::post('/update/notice/{id}', [SocialsController::class, 'updatenotice'])->name('update.notice');
 Route::get('/deactive/notice/{id}', [SocialsController::class, 'deactivenotice'])->name('deactive.notice');
 Route::get('/active/notice/{id}', [SocialsController::class, 'activenotice'])->name('active.notice');
-Route::get('/website/setting', [SocialsController::class, 'websitesetting'])->name('website.setting');
+Route::get('/website/setting', [SocialsController::class, 'websitesetting'])->name('website.all');
 Route::get('/add/website', [SocialsController::class, 'addwebsite'])->name('add.website');
 Route::post('/store/website', [SocialsController::class, 'storewebsite'])->name('store.website');
 Route::get('/edit/website/{id}', [SocialsController::class, 'editwebsite'])->name('edit.website');
 Route::post('/update/website/{id}', [SocialsController::class, 'updatewebsite'])->name('update.website');
-Route::get('/delete.website/{id}', [SocialsController::class, 'deletewebsite'])->name('delete.website');
+Route::get('/delete/website/{id}', [SocialsController::class, 'deletewebsite'])->name('delete.website');
+Route::get('/photo/gallery', [GalleryController::class, 'index'])->name('photo.gallery');
+Route::get('/add/photo', [GalleryController::class, 'create'])->name('add.photo');
+Route::post('/store/photo', [GalleryController::class, 'store'])->name('store.photo');
+Route::get('/photo/gallery/{id}', [GalleryController::class, 'edit'])->name('edit.gallery');
+Route::post('/update/photo/{id}', [GalleryController::class, 'update'])->name('update.photo');
+Route::get('/delete/photo/{id}', [GalleryController::class, 'delete'])->name('delete.gallery');
+Route::get('/video/gallery', [GalleryController::class, 'videogallery'])->name('video.gallery');
+Route::get('/add/video', [GalleryController::class, 'addvideo'])->name('add.video');
+Route::post('/store/video', [GalleryController::class, 'storevideo'])->name('store.video');
+Route::get('/edit/Video/{id}', [GalleryController::class, 'editVideo'])->name('edit.Video');
+Route::post('/update/video/{id}', [GalleryController::class, 'updatevideo'])->name('update.video');
+Route::get('/delete/video/{id}', [GalleryController::class, 'deleteVideo'])->name('delete.Video');

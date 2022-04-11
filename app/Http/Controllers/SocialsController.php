@@ -226,7 +226,7 @@ class SocialsController extends Controller
             'alert-type' => 'success'
         );
 
-        return Redirect()->route('website.setting')->with($notification);
+        return Redirect()->route('website.all')->with($notification);
 
     }
 
@@ -247,7 +247,7 @@ class SocialsController extends Controller
             'message' => 'Website Link Updated Successfully',
             'alert-type' => 'success'
         );
-        return Redirect()->route('website.setting')->with($notification);
+        return Redirect()->route('website.all')->with($notification);
     }
 
     public function deletewebsite($id)
@@ -258,6 +258,6 @@ class SocialsController extends Controller
             'alert-type' => 'success'
         );
 
-        return Redirect()->route('website.setting')->with($notification);
+        return Redirect()->route('website.all')->with($notification);
     }
 }
