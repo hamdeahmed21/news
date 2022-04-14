@@ -40,7 +40,7 @@
                             <label for="exampleInputUsername1">SubCategory Arabic</label>
                             <input type="text" class="form-control" name="subcategory_ar"  placeholder="SubCategory Arabic">
 
-                            @error('subcategory_en')
+                            @error('subcategory_ar')
                             <span class="text-danger">{{ $message }}</span>
                             @enderror
                         </div>
@@ -48,7 +48,7 @@
                         <div class="form-group">
                             <label for="exampleInputEmail1">SubCategory English</label>
                             <input type="text" class="form-control" name="subcategory_en"  placeholder="SubCategory English">
-                            @error('subcategory_hin')
+                            @error('subcategory_en')
                             <span class="text-danger">{{ $message }}</span>
                             @enderror
                         </div>

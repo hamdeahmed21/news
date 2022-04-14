@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\ExtraController;
 use App\Http\Controllers\GalleryController;
 use App\Http\Controllers\HomeController;
 use App\Http\Controllers\SocialsController;
@@ -26,7 +27,6 @@ Route::get('/', function () {
 });
 
 Auth::routes();
-
 Route::get('/home', [HomeController::class, 'index'])->name('home');
 Route::get('/admin/logout', [HomeController::class, 'Logout'])->name('admin.logout');
 Route::get('/categories', [CategoryController::class, 'index'])->name('categories');
@@ -93,3 +93,12 @@ Route::post('/store/video', [GalleryController::class, 'storevideo'])->name('sto
 Route::get('/edit/Video/{id}', [GalleryController::class, 'editVideo'])->name('edit.Video');
 Route::post('/update/video/{id}', [GalleryController::class, 'updatevideo'])->name('update.video');
 Route::get('/delete/video/{id}', [GalleryController::class, 'deleteVideo'])->name('delete.Video');
+
+
+Route::get('/lang/english', [ExtraController::class, 'English'])->name('lang.english');
+Route::get('/lang/Arabic', [ExtraController::class, 'Arabic'])->name('lang.arabic');
+Route::get('/search/district', [ExtraController::class, 'SearchDistrict'])->name('searchby.districts');
+Route::get('/view/post/{id}', [ExtraController::class, 'SinglePost']);
+Route::get('/catpost/{id}/{category_en}', [ExtraController::class, 'CatPost']);
+Route::get('/subcatpost/{id}/{subcategory_en}', [ExtraController::class, 'SubCatPost']);
+Route::get('/get/subdistrict/frontend/{district_id}', [ExtraController::class, 'GetSubDist']);

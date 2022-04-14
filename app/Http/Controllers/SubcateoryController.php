@@ -39,10 +39,6 @@ class SubcateoryController extends Controller
      */
     public function store(Request $request)
     {
-        $validatedData = $request->validate([
-            'subcategory_ar' => 'required|unique:subcategories|max:255',
-            'subcategory_en' => 'required|unique:subcategories|max:255',
-        ]);
 
         $data = array();
         $data['subcategory_ar'] = $request->subcategory_ar;

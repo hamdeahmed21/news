@@ -46,8 +46,8 @@
                             <thead>
                             <tr>
                                 <th> # </th>
+                                <th> SubCategory Arabic </th>
                                 <th> SubCategory English </th>
-                                <th> SubCategory Hindi </th>
                                 <th> Category Name </th>
                                 <th> Action </th>
 
